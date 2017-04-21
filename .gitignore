@@ -1,0 +1,9 @@
+# temporary
+*~
+
+# Vagrant
+.vagrant/
+*.log
+
+# JetBrains IDEs
+.idea/
