@@ -6,6 +6,9 @@
 #
 # These files are text and should be normalized (Convert CRLF => LF)
 
+## SOURCE CODE
+*.sh         text
+
 ## DOCUMENTATION
 *.md         text
 LICENSE      text
