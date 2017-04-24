@@ -4,6 +4,7 @@
 # Vagrant
 .vagrant/
 *.log
+Vagrantfile
 
 # JetBrains IDEs
 .idea/
