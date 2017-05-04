@@ -1,5 +1,8 @@
 #!/bin/bash
 
+add-apt-repository ppa:git-core/ppa -y
+add-apt-repository ppa:pdoes/gitflow-avh -y
+apt-get update -y
 apt-get install git git-flow -y
 
 gitconfig=$(cat <<-EOF

@@ -49,6 +49,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "./provision/java.sh"
   config.vm.provision "shell", path: "./provision/git.sh", args: ["NAME", "EMAIL"]
   config.vm.provision "shell", path: "./provision/zsh.sh", args: ["THEME", "(plugin1 plugin2 ...)"]
-  config.vm.provision "shell", path: "./provision/lxde.sh"
+  config.vm.provision "shell", path: "./provision/mate.sh"
   config.vm.provision "shell", path: "./provision/develop_tools.sh"
 end

@@ -8,8 +8,12 @@ for i in "${!USERS[@]}"; do
     fi
 done
 
-### Installing LXDE ###
-apt-get install --no-install-recommends lubuntu-core lubuntu-desktop -y
+### Installing Mate env. ###
+apt-add-repository ppa:ubuntu-mate-dev/ppa -y
+apt-add-repository ppa:ubuntu-mate-dev/xenial-mate -y
+apt-get update -y
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | /usr/bin/debconf-set-selections
+apt-get install "ubuntu-mate-*" "ubuntu-restricted-*" -y
 echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 
 ### Install Virtualbox Guest Additions ###
