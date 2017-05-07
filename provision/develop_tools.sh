@@ -13,6 +13,6 @@ for i in "${!PACKAGES[@]}"
 do
    dpkg -i "${PACKAGES[$i]}"
    apt-get -fy install
-   rm -f $PACKAGE "${PACKAGES[$i]}"
+   rm -f "${PACKAGES[$i]}"
 done
 
