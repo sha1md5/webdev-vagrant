@@ -52,4 +52,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "./provision/mate.sh"
   config.vm.provision "shell", path: "./provision/develop_tools.sh"
   config.vm.provision "shell", path: "./provision/mysql.sh"
+  config.vm.provision "shell", path: "./provision/php.sh"
+  config.vm.provision "shell", path: "./provision/xdebug.sh", args: ["IDE_KEY"]
+  config.vm.provision "shell", path: "./provision/composer.sh"
 end
