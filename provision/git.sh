@@ -25,8 +25,9 @@ EOF
 
 ### Setting git config for all users ###
 source /vagrant/provision/_general.sh
+FILE=".gitconfig"
 for i in "${!HOME_DIRS[@]}"; do
-    echo "$gitconfig" > "${HOME_DIRS[$i]}"/.gitconfig
-    chown "${USERS[$i]}": "${HOME_DIRS[$i]}"/.gitconfig
+    echo "$gitconfig" > "${HOME_DIRS[$i]}"/$FILE
+    chown "${USERS[$i]}": "${HOME_DIRS[$i]}"/$FILE
 done
 

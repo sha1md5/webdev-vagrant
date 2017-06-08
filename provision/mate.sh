@@ -2,9 +2,9 @@
 
 ### Change all users passwords to usernames ###
 source /vagrant/provision/_general.sh
-for i in "${!USERS[@]}"; do
-    if [ "${USERS[$i]}" != "root" ]; then
-        echo "${USERS[$i]}:${USERS[$i]}" | chpasswd
+for user in "${USERS[@]}"; do
+    if [ $user != "root" ]; then
+        echo "$user:$user" | chpasswd
     fi
 done
 
@@ -17,10 +17,11 @@ apt-get install "ubuntu-mate-*" "ubuntu-restricted-*" -y
 echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 
 ### Install Virtualbox Guest Additions ###
+DIR="/media/iso"
 apt-get install "virtualbox-guest-*" -y
-mkdir /media/iso
-mount -o loop,ro /usr/share/virtualbox/VBoxGuestAdditions.iso /media/iso
-sh /media/iso/VBoxLinuxAdditions.run
-umount /media/iso
-rm -rf /media/iso
+mkdir $DIR
+mount -o loop,ro /usr/share/virtualbox/VBoxGuestAdditions.iso $DIR
+sh $DIR/VBoxLinuxAdditions.run
+umount $DIR
+rm -rf $DIR
 

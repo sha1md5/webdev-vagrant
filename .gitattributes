@@ -1,18 +1,13 @@
-# Auto detect text files and perform LF normalization
 * text=auto
 
-#
-# The above will handle all files NOT found below
-#
-# These files are text and should be normalized (Convert CRLF => LF)
-
 ## SOURCE CODE
-*.sh         text
+*.sh text eol=lf
 
 ## DOCUMENTATION
-*.md         text
-LICENSE      text
+*.md    text
+LICENSE text
 
 ## CONFIGS
 .gitattributes text
 .gitignore     text
+.dist          text

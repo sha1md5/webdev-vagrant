@@ -42,8 +42,9 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", path: "./provision/system_upgrade.sh"
   config.vm.provision "shell", path: "./provision/update_motd.sh"
-  config.vm.provision "shell", path: "./provision/setting_locale.sh", args: ["LANGUAGE_REGION",]
-  config.vm.provision "shell", path: "./provision/setting_timezone.sh", args: ["TIMEZONE"]
+  config.vm.provision "shell", path: "./provision/setting_locale.sh", args: ["LANGUAGE_REGION(ex. en_US)",]
+  config.vm.provision "shell", path: "./provision/setting_timezone.sh", args: ["TIMEZONE(ex. Etc/UTC)"]
+  config.vm.provision "shell", path: "./provision/setting_hosts.sh", args: ["HOSTNAME"]
   config.vm.provision "shell", path: "./provision/nano.sh"
   config.vm.provision "shell", path: "./provision/utils.sh"
   config.vm.provision "shell", path: "./provision/java.sh"
@@ -52,7 +53,10 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "./provision/mate.sh"
   config.vm.provision "shell", path: "./provision/develop_tools.sh"
   config.vm.provision "shell", path: "./provision/mysql.sh"
-  config.vm.provision "shell", path: "./provision/php.sh"
-  config.vm.provision "shell", path: "./provision/xdebug.sh", args: ["IDE_KEY"]
+  config.vm.provision "shell", path: "./provision/php.sh", args: ["VERSION(5.6, 7.0 or 7.1)"]
+  config.vm.provision "shell", path: "./provision/xdebug.sh"
   config.vm.provision "shell", path: "./provision/composer.sh"
+  config.vm.provision "shell", path: "./provision/nginx.sh"
+  config.vm.provision "shell", path: "./provision/apache.sh"
+  config.vm.provision "shell", path: "./provision/h5ai.sh"
 end

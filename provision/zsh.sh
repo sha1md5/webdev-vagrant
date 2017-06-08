@@ -26,7 +26,7 @@ EOF
 ### Setting zsh for all users ###
 source /vagrant/provision/_general.sh
 for i in "${!HOME_DIRS[@]}"; do
-    FILEPATH="${HOME_DIRS[$i]}"/$FILE
+    FILEPATH="${HOME_DIRS[$i]}/$FILE"
     
     chsh -s $(which zsh) "${USERS[$i]}"
     sudo -H -u "${USERS[$i]}" bash -c \

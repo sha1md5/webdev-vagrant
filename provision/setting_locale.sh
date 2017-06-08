@@ -2,6 +2,7 @@
 
 locale-gen $1 $1.UTF-8
 update-locale
+
 cat <<EOF > /etc/default/locale
 LANG="$1.UTF-8"
 LC_ADDRESS="$1.UTF-8"

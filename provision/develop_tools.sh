@@ -8,11 +8,11 @@ curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-st
 curl -L -o atom.deb https://atom.io/download/deb
 curl -L -o gitkraken.deb https://release.gitkraken.com/linux/gitkraken-amd64.deb
 
-PACKAGES=("google-chrome.deb" "atom.deb" "gitkraken.deb")
-for i in "${!PACKAGES[@]}"
+packages=('google-chrome.deb' 'atom.deb' 'gitkraken.deb')
+for package in "${packages[@]}"
 do
-   dpkg -i "${PACKAGES[$i]}"
+   dpkg -i $package
    apt-get -fy install
-   rm -f "${PACKAGES[$i]}"
+   rm -f $package
 done
 
